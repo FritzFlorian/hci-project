@@ -1,0 +1,98 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="vendor/jstree/themes/default/style.min.css">
+        <link rel="stylesheet" href="vendor/lobipanel/css/lobipanel.min.css">
+    </head>
+    <body>
+
+        <div class="my-box">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">VPLAN</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">Page 1</a></li>
+                        <li><a href="#">Page 2</a></li>
+                        <li><a href="#">Page 3</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="my-row my-content">
+                <div id="left">
+                    <h1>Experiments</h1>
+                    <div id="experiment-browser"></div>
+                </div>
+                <div id="center">
+                    <div id="panel-parent" class="content">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    <h4>Panel title</h4>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                Lorem ipsum...<br/>
+                                Lorem ipsum...<br/>
+                                Lorem ipsum...<br/>
+                                Lorem ipsum...<br/>
+                                Lorem ipsum...<br/>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    <h4>Panel title</h4>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                Lorem ipsum...
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- To be inserted when clicking add -->
+                    <div id="hidden-panel" class="panel panel-default" hidden>
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                <h4>Panel title</h4>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            Lorem ipsum...
+                        </div>
+                    </div>
+
+                    <button id="add-button" type="button" class="btn btn-success">Add Tool</button>
+                </div>
+                <div id="right">
+                    content three
+                </div>
+            </div>
+        </div>
+
+        <!-- General Libs: jQuery + bootsrap -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <!-- Specific Libs: fileTree, panels, ... -->
+        <script src="https://unpkg.com/split.js/split.min.js"></script>
+        <script src="vendor/jstree/jstree.min.js"></script>
+        <script src="vendor/lobipanel/js/lobipanel.min.js"></script>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
