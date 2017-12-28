@@ -5,7 +5,7 @@ Split(['#left', '#center', '#right'], {
 });
 
 // Drag & Drop panels
-// See: 
+// See: https://lobianijs.com/site/lobipanel
 $(function(){
   $('#panel-parent').sortable();
   $('#panel-parent').children().lobiPanel({
