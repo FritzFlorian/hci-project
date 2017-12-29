@@ -91,3 +91,27 @@ $('#experiment-browser').jstree({
     ]
   }
 });
+
+//Parm Panel
+$(function(){  
+  var empty = $('#empty-param');
+  empty.removeAttr('id');
+
+  //Init
+  ["Kat-Konz.", "na1", "na2", "na4", "Temp1", "Temp2"].forEach(function(name) {
+    var clone = empty.clone();
+    clone.find(".name-field").val(name);
+    clone.appendTo('#params');
+    clone.show();
+  });
+
+  $('#add-param').click(function() {
+    var clone = empty.clone();
+    clone.appendTo('#params');
+    clone.show();
+  });
+
+  $('.remove-param').click(function(event) {
+    $(event.target).parents(".param").remove()
+  });
+});
