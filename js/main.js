@@ -4,19 +4,36 @@ Split(['#left', '#center', '#right'], {
   sizes: [25, 50, 25]
 });
 
-// Drag & Drop panels
-// See: https://lobianijs.com/site/lobipanel
-$(function(){
-  $('#panel-parent').sortable();
-  $('#panel-parent').children().lobiPanel({
+// Helper that will add menu items to a panel
+function addMenuItems(panelDiv) {
+  panelDiv.lobiPanel({
     sortable: true,
     reload: false,
     unpin: false,
     expand: false,
-    editTitle: false,
+    editTitle: false
     scrollable: false
   });
 
+  // Add pencil to 'edit' the source code.
+  panelDiv.find(".dropdown-menu-right").prepend(`
+    <li>
+      <a data-toggle="tooltip" data-placement="bottom" title="Edit Sourcecode"><i class="panel-control-icon glyphicon glyphicon-pencil"></i><span class="control-title">Edit Sourcecode</span></a>
+    </li>
+  `);
+  var tooltip = panelDiv.find('*[title="Edit Sourcecode"]');
+  tooltip.tooltip();
+  tooltip.click(function() {
+    $('#editSourcecodeModal').modal();
+  });
+}
+
+// Drag & Drop panels
+// See: https://lobianijs.com/site/lobipanel
+$(function(){
+  $('#panel-parent').children().each(function() {
+    addMenuItems($(this));
+  });
 
   // Insert new nodes
   var hidden = $('#hidden-panel');
@@ -27,8 +44,39 @@ $(function(){
     clone.appendTo('#panel-parent');
     clone.show();
 
+    // Update the UI-Sortable collection
     $('#panel-parent').sortable("refresh");
     $('#panel-parent').sortable("refreshPositions");
+
+      addMenuItems(clone);
+  });
+});
+
+// Drag & Drop Program Operations
+// See: https://lobianijs.com/site/lobipanel
+$(function(){
+  var list_parent = $('#list-parent');
+  list_parent.children().lobiPanel({
+    sortable: true,
+    reload: false,
+    unpin: false,
+    expand: false,
+    editTitle: false,
+    minimize: false
+  });
+
+
+  // Insert new nodes
+  var hidden = $('#hidden-item');
+  hidden.removeAttr('id');
+
+  $('#add-operation-button').click(function() {
+    var clone = hidden.clone();
+    clone.appendTo('#list-parent');
+    clone.show();
+
+    list_parent.sortable("refresh");
+    list_parent.sortable("refreshPositions");
 
     clone.lobiPanel({
       sortable: true,
@@ -36,6 +84,7 @@ $(function(){
       unpin: false,
       expand: false,
       editTitle: false,
+      minimize: false
     });
   });
 });
@@ -91,6 +140,30 @@ $('#experiment-browser').jstree({
       }
     ]
   }
+});
+
+//Parm Panel
+$(function(){  
+  var empty = $('#empty-param');
+  empty.removeAttr('id');
+
+  //Init
+  ["Kat-Konz.", "na1", "na2", "na4", "Temp1", "Temp2"].forEach(function(name) {
+    var clone = empty.clone();
+    clone.find(".name-field").val(name);
+    clone.appendTo('#params');
+    clone.show();
+  });
+
+  $('#add-param').click(function() {
+    var clone = empty.clone();
+    clone.appendTo('#params');
+    clone.show();
+  });
+
+  $('.remove-param').click(function(event) {
+    $(event.target).parents(".param").remove()
+  });
 });
 
 require(['vs/editor/editor.main'], function() {

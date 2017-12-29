@@ -1,6 +1,6 @@
 # HCI Project
 
-Project for our course Human Comput Interaction.
+Project for our course Human Computer Interaction.
 
 # Mentions
 
@@ -10,4 +10,6 @@ Used Libraries:
 - JSTree (https://www.jstree.com/api/)
 - Bootstrap 3 (https://getbootstrap.com/)
 - JQuery (https://jquery.com/)
+- JQueryUI (https://jquery.com/)
+- nestedSortable (https://github.com/ilikenwf/nestedSortable)- JQuery (https://jquery.com/)
 - Monaco Editor (https://microsoft.github.io/monaco-editor/)

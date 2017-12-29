@@ -484,7 +484,7 @@ $(function(){
         var _enableSorting = function(){
             var parent = me.$el.parent();
             if (parent.hasClass('ui-sortable')){
-                parent.sortable("destroy");
+                parent.nestedSortable("destroy");
             }
             if (me.$options.sortable){
                 me.$el.addClass('lobipanel-sortable');
@@ -492,9 +492,12 @@ $(function(){
             }else{
                 me.$el.removeClass('lobipanel-sortable');
             }
-            parent.sortable({
+            parent.nestedSortable({
                 connectWith: '.lobipanel-parent-sortable',
                 items: '.lobipanel-sortable',
+                listType: 'div',
+                disableParentChange: true,
+                protectRoot: true,
                 handle: '.panel-heading',
                 cursor: 'move',
                 placeholder: 'lobipanel-placeholder',
@@ -513,7 +516,7 @@ $(function(){
         var _disableSorting = function () {
             var parent = me.$el.parent();
             if (parent.hasClass('ui-sortable')) {
-                parent.sortable("destroy");
+                parent.nestedSortable("destroy");
             }
         };
         var _updateDataIndices = function(panel){
