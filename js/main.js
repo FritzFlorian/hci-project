@@ -15,7 +15,7 @@ function addMenuItems(panelDiv) {
   });
 
   // Add pencil to 'edit' the source code.
-  panelDiv.find("ul").prepend(`
+  panelDiv.find(".dropdown-menu-right").prepend(`
     <li>
       <a data-toggle="tooltip" data-placement="bottom" title="Edit Sourcecode"><i class="panel-control-icon glyphicon glyphicon-pencil"></i><span class="control-title">Edit Sourcecode</span></a>
     </li>
