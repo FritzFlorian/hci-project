@@ -14,6 +14,7 @@ $(function(){
     unpin: false,
     expand: false,
     editTitle: false,
+    scrollable: false
   });
 
 
@@ -90,4 +91,32 @@ $('#experiment-browser').jstree({
       }
     ]
   }
+});
+
+require(['vs/editor/editor.main'], function() {
+    var editor = monaco.editor.create(document.getElementById('container'), {
+        value: [
+            '[OptionenVersuchsplanung]',
+            'maxit=300',
+            'opttol=1e-06',
+            'stemlimitLS=2',
+            '',
+            '[OptionenParameterschaetzung]',
+            'method=3',
+            'eps=0.001',
+            'itmax=50',
+            'cond=10000',
+            '[OptionenVersuchsplanung]',
+            'maxit=300',
+            'opttol=1e-06',
+            'stemlimitLS=2',
+            '',
+            '[OptionenParameterschaetzung]',
+            'method=3',
+            'eps=0.001',
+            'itmax=50',
+            'cond=10000'
+        ].join('\n'),
+        language: 'ini'
+    });
 });

@@ -10,3 +10,4 @@ Used Libraries:
 - JSTree (https://www.jstree.com/api/)
 - Bootstrap 3 (https://getbootstrap.com/)
 - JQuery (https://jquery.com/)
+- Monaco Editor (https://microsoft.github.io/monaco-editor/)
