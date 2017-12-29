@@ -10,3 +10,5 @@ Used Libraries:
 - JSTree (https://www.jstree.com/api/)
 - Bootstrap 3 (https://getbootstrap.com/)
 - JQuery (https://jquery.com/)
+- JQueryUI (https://jquery.com/)
+- nestedSortable (https://github.com/ilikenwf/nestedSortable)
