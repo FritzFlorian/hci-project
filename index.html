@@ -70,10 +70,10 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <div class="panel-title">
-                                    <h4>Panel title</h4>
+                                    <h4>Raw File Snapshort</h4>
                                 </div>
                             </div>
-                            <div class="panel-body" style="height: 200px;">
+                            <div class="panel-body" style="height: 400px;">
                                 <div id="container" style="height: 90%; width: 98%"></div>
                             </div>
                         </div>
@@ -160,7 +160,38 @@
                     <button id="add-button" type="button" class="btn btn-success">Add Tool</button>
                 </div>
                 <div id="right">
-                    content three
+					<ul class="nav nav-tabs">
+					  <li class="active"><a data-toggle="tab" href="#graph">Graph</a></li>
+					  <li><a data-toggle="tab" href="#values">Values</a></li>
+					</ul>
+
+					<div class="tab-content">
+					  <div id="graph" class="tab-pane fade in active">
+					    <h3>Graph</h3>
+                            <div id="list-parent" class="program-operations">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <img src="img/charts/combined.png" class="img-fluid" alt="Responsive image">
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                    	<img src="img/charts/na1.png" class="img-fluid" alt="Responsive image">
+                                    </div>
+                                </div>
+                                                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                    	<img src="img/charts/kat.png" class="img-fluid" alt="Responsive image">
+                                    </div>
+                                </div>
+                            </div>
+					    
+					  </div>
+					  <div id="values" class="tab-pane fade">
+					    <h3>Menu 1</h3>
+					    <p>Some content in menu 1.</p>
+					  </div>
+					</div>
                 </div>
             </div>
         </div>
