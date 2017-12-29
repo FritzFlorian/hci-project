@@ -1,6 +1,6 @@
 # HCI Project
 
-Project for our course Human Comput Interaction.
+Project for our course Human Computer Interaction.
 
 # Mentions
 

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Model Browser</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="modelbrowser container">
+        <div class="row vertical-align">
+            <div class="col-md-6">
+                <h1>
+                    Model Browser
+                </h1>
+            </div>
+            <div class="col-md-3">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownCategory" data-toggle="dropdown" aria-haspopup="true">
+                        All Categories
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="#">Diseases</a></li>
+                        <li><a href="#">Reactions</a></li>
+                        <li><a href="#">Therapies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Go</button>
+                      </span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-row my-content">
+            <div id="left" class="col-md-6">
+                <table class="model-table table table-hover table-striped">
+                    <thead>
+                        <th>Model</th>
+                        <th>Author</th>
+                        <th>Downloads</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cake</td>
+                            <td>Aperture Laboratories</td>
+                            <td>10815</td>
+                        </tr>
+                        <tr>
+                            <td>Eagle Obesity</td>
+                            <td>Wheatly</td>
+                            <td>851</td>
+                        </tr>
+                        <tr>
+                            <td>Lemon</td>
+                            <td>GLaDOS</td>
+                            <td>105</td>
+                        </tr>
+                        <tr>
+                            <td>Cores</td>
+                            <td>Cave Johnson</td>
+                            <td>58</td>
+                        </tr>
+                        <tr>
+                            <td>Potato</td>
+                            <td>Gordon Freeman</td>
+                            <td>5</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="right" class="description col-md-6">
+                <div id="heading">
+                    <h2 id="model-title">Model</h2> by <span id="model-author">Author</span>
+                </div>
+                <div id="content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis ligula dui, eu dictum mi aliquam nec. Pellentesque tempor placerat nulla, aliquet condimentum dolor sodales eget. Quisque sagittis ipsum ac erat finibus tincidunt. Suspendisse elementum, ex ac pretium tincidunt, leo erat euismod neque, vitae volutpat nulla justo ac ipsum. Etiam ornare tellus sed sapien efficitur rutrum. Pellentesque ut magna pretium, ultricies lectus ut, viverra ipsum. Cras mi leo, faucibus at erat non, lacinia gravida orci. Proin erat lacus, pulvinar eget scelerisque vitae, convallis vel odio.</p>
+                    <p>Proin molestie luctus ante, vel efficitur dolor. Morbi pretium lectus lacus. Curabitur tempus, massa nec ornare iaculis, nunc turpis cursus arcu, a vestibulum velit lectus maximus nunc. Integer non suscipit mauris, sit amet lacinia lacus. Vivamus hendrerit libero metus, fringilla porttitor diam efficitur vulputate. Sed at lacus metus. Pellentesque sit amet odio erat. Ut viverra tellus sed commodo congue. Morbi consectetur sollicitudin justo sed blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec porta purus ac ultrices feugiat. Vestibulum eu massa blandit, finibus massa vitae, semper dolor. Etiam tellus dui, efficitur sed sagittis eget, posuere non nibh. Nunc ac sem orci.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row vertical-align">
+            <div class="col-md-9">
+
+            </div>
+            <div class="col-md-3">
+                <div class="actions">
+                    <button type="button" class="btn btn-success">Open</button>
+                    <button type="button" class="btn btn-secondary">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/split.js/split.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="js/modelbrowser.js"></script>
+</body>
+</html>

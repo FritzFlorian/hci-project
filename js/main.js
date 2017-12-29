@@ -13,7 +13,7 @@ $(function(){
     reload: false,
     unpin: false,
     expand: false,
-    editTitle: false,
+    editTitle: false
   });
 
 
@@ -34,7 +34,45 @@ $(function(){
       reload: false,
       unpin: false,
       expand: false,
+      editTitle: false
+    });
+  });
+});
+
+// Drag & Drop Program Operations
+// See: https://lobianijs.com/site/lobipanel
+$(function(){
+  var list_parent = $('#list-parent');
+  list_parent.sortable();
+  list_parent.children().lobiPanel({
+    sortable: true,
+    reload: false,
+    unpin: false,
+    expand: false,
+    editTitle: false,
+    minimize: false
+  });
+
+
+  // Insert new nodes
+  var hidden = $('#hidden-item');
+  hidden.removeAttr('id');
+
+  $('#add-operation-button').click(function() {
+    var clone = hidden.clone();
+    clone.appendTo('#list-parent');
+    clone.show();
+
+    list_parent.sortable("refresh");
+    list_parent.sortable("refreshPositions");
+
+    clone.lobiPanel({
+      sortable: true,
+      reload: false,
+      unpin: false,
+      expand: false,
       editTitle: false,
+      minimize: false
     });
   });
 });
