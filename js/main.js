@@ -4,16 +4,35 @@ Split(['#left', '#center', '#right'], {
   sizes: [25, 50, 25]
 });
 
-// Drag & Drop panels
-// See: https://lobianijs.com/site/lobipanel
-$(function(){
-  $('#panel-parent').sortable();
-  $('#panel-parent').children().lobiPanel({
+// Helper that will add menu items to a panel
+function addMenuItems(panelDiv) {
+  panelDiv.lobiPanel({
     sortable: true,
     reload: false,
     unpin: false,
     expand: false,
     editTitle: false
+  });
+
+  // Add pencil to 'edit' the source code.
+  panelDiv.find(".dropdown-menu-right").prepend(`
+    <li>
+      <a data-toggle="tooltip" data-placement="bottom" title="Edit Sourcecode"><i class="panel-control-icon glyphicon glyphicon-pencil"></i><span class="control-title">Edit Sourcecode</span></a>
+    </li>
+  `);
+  var tooltip = panelDiv.find('*[title="Edit Sourcecode"]');
+  tooltip.tooltip();
+  tooltip.click(function() {
+    $('#editSourcecodeModal').modal();
+  });
+}
+
+// Drag & Drop panels
+// See: https://lobianijs.com/site/lobipanel
+$(function(){
+  $('#panel-parent').sortable();
+  $('#panel-parent').children().each(function() {
+    addMenuItems($(this));
   });
 
 
@@ -26,16 +45,11 @@ $(function(){
     clone.appendTo('#panel-parent');
     clone.show();
 
+    // Update the UI-Sortable collection
     $('#panel-parent').sortable("refresh");
     $('#panel-parent').sortable("refreshPositions");
 
-    clone.lobiPanel({
-      sortable: true,
-      reload: false,
-      unpin: false,
-      expand: false,
-      editTitle: false
-    });
+      addMenuItems(clone);
   });
 });
 
