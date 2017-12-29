@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>VPLAN</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -77,6 +77,72 @@
                                 Lorem ipsum...
                             </div>
                         </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    <h4>Program Operations</h4>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div id="list-parent" class="program-operations">
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">
+                                                Integration
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">
+                                                Simulation
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">
+                                                Parameter Estimation
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">
+                                                Objective Test
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">
+                                                Simulation
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">
+                                                Derivative Test
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button id="add-operation-button" type="button" class="btn btn-success">Add Operation</button>
+                                <button type="button" class="run-button btn btn-success">Run</button>
+
+                                <!-- To be inserted when clicking add -->
+                                <div id="hidden-item" class="panel panel-default" hidden>
+                                    <div class="panel-heading">
+                                        <div class="panel-title">
+                                            New Operation
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
 
                     <!-- To be inserted when clicking add -->
@@ -97,6 +163,102 @@
                     content three
                 </div>
             </div>
+        </div>
+
+
+        <div id="editSourcecodeModal" class="modal fade" role="dialog">
+          <div class="modal-dialog  modal-lg"">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edit Sourcecode of Toolbox</h4>
+              </div>
+              <div class="modal-body">
+                <p>
+                    Edit the sourcecode of this toolbox. This will create a local copy that you can pulish under a differnt name.<br/>
+                    The original toolbox wont be changed and is still avaliable to be added.
+                </p>
+                <div class="form-group">
+                  <label for="comment">Edit Code:</label>
+                  <textarea class="form-control" rows="20">
+from pyjamas.ui.Composite import Composite
+from pyjamas.ui.CheckBox import CheckBox
+from pyjamas.ui.HorizontalPanel import HorizontalPanel
+from pyjamas.ui.VerticalPanel import VerticalPanel
+from pyjamas.ui.Button import Button
+from pyjamas.ui import HasAlignment
+
+class DayCheckBox(CheckBox):
+
+    def __init__(self, owner, caption, day):
+        CheckBox.__init__(self, caption)
+
+        self.day = day
+        self.addClickListener(owner.dayCheckBoxListener)
+        self.setChecked(owner.calendar.getDayIncluded(day))
+
+
+class DayCheckBoxListener:
+    def __init__(self, calendar):
+        self.calendar = calendar
+
+    def onClick(self, sender):
+        self.calendar.setDayIncluded(sender.day, sender.isChecked())
+
+
+class DayFilterWidget(Composite):
+
+    def __init__(self, calendar):
+        Composite.__init__(self)
+
+        self.calendar = calendar
+        self.dayCheckBoxListener = DayCheckBoxListener(calendar)
+        self.outer = VerticalPanel()
+        self.initWidget(self.outer)
+        self.setStyleName("DynaTable-DayFilterWidget")
+        self.outer.add(DayCheckBox(self, "Sunday", 0))
+        self.outer.add(DayCheckBox(self, "Monday", 1))
+        self.outer.add(DayCheckBox(self, "Tuesday", 2))
+        self.outer.add(DayCheckBox(self, "Wednesday", 3))
+        self.outer.add(DayCheckBox(self, "Thursday", 4))
+        self.outer.add(DayCheckBox(self, "Friday", 5))
+        self.outer.add(DayCheckBox(self, "Saturday", 6))
+
+        self.buttonAll = Button("All", self)
+        self.buttonNone = Button("None", self)
+
+        hp = HorizontalPanel()
+        hp.setHorizontalAlignment(HasAlignment.ALIGN_CENTER)
+        hp.add(self.buttonAll)
+        hp.add(self.buttonNone)
+
+        self.outer.add(hp)
+        self.outer.setCellVerticalAlignment(hp, HasAlignment.ALIGN_BOTTOM)
+        self.outer.setCellHorizontalAlignment(hp, HasAlignment.ALIGN_CENTER)
+
+    def setAllCheckBoxes(self, checked):
+        for widget in self.outer:
+            if hasattr(widget, "setChecked"):
+                widget.setChecked(checked)
+                self.dayCheckBoxListener.onClick(widget)
+
+    def onClick(self, sender):
+        if self.buttonAll == sender:
+            self.setAllCheckBoxes(True)
+        elif self.buttonNone == sender:
+            self.setAllCheckBoxes(False)
+                  </textarea>
+                </div>
+              </div>
+              <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
+              </div>
+            </div>
+
+          </div>
         </div>
 
         <!-- General Libs: jQuery + bootsrap -->
