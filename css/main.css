@@ -105,3 +105,46 @@ html, body {
   display: flex;
   align-items: center;
 }
+
+#projectpicker {
+  width: 700px;
+  margin: auto;
+}
+
+#projects {
+  margin: 0;
+  padding: 0;
+}
+.project {
+  text-decoration: none;
+  list-style: none;
+  margin 0;
+  padding: 10px 10px;
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: #ddd;
+  border-collapse: collapse;
+}
+.project a {
+  width: 100%;
+  display: block;
+  color: #333;
+}
+.project a span {
+  color: #666;
+}
+.project:first-child {
+  border-width: 2px 0 1px 0;
+}
+.project:last-child {
+  border-width: 1px 0 2px 0;
+}
+
+.picker-left h3 {
+  margin: 0 0 10px 0;
+}
+
+.picker-right h1 {
+  text-align: center;
+  margin: 20px 0 50px 0;
+}
