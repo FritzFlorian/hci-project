@@ -12,7 +12,6 @@ function addMenuItems(panelDiv) {
     unpin: false,
     expand: false,
     editTitle: false
-    scrollable: false
   });
 
   // Add pencil to 'edit' the source code.
