@@ -30,11 +30,9 @@ function addMenuItems(panelDiv) {
 // Drag & Drop panels
 // See: https://lobianijs.com/site/lobipanel
 $(function(){
-  $('#panel-parent').sortable();
   $('#panel-parent').children().each(function() {
     addMenuItems($(this));
   });
-
 
   // Insert new nodes
   var hidden = $('#hidden-panel');
@@ -57,7 +55,6 @@ $(function(){
 // See: https://lobianijs.com/site/lobipanel
 $(function(){
   var list_parent = $('#list-parent');
-  list_parent.sortable();
   list_parent.children().lobiPanel({
     sortable: true,
     reload: false,
