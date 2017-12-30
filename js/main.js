@@ -51,6 +51,19 @@ $(function(){
   });
 });
 
+// Drag & Drop panels
+// See: https://lobianijs.com/site/lobipanel
+$(function(){
+  var graph_parent = $('#graph-parent');
+  graph_parent.children().lobiPanel({
+    sortable: true,
+    reload: false,
+    unpin: false,
+    expand: false,
+    editTitle: false
+  });
+});
+
 // Drag & Drop Program Operations
 // See: https://lobianijs.com/site/lobipanel
 $(function(){
@@ -63,7 +76,6 @@ $(function(){
     editTitle: false,
     minimize: false
   });
-
 
   // Insert new nodes
   var hidden = $('#hidden-item');
