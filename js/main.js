@@ -159,9 +159,9 @@ $(function(){
   empty.removeAttr('id');
 
   //Init
-  ["Kat-Konz.", "na1", "na2", "na4", "Temp1", "Temp2"].forEach(function(name) {
+  ['Kat-Konz.', 'na1', 'na2', 'na4', 'Temp1', 'Temp2'].forEach(function(name) {
     var clone = empty.clone();
-    clone.find(".name-field").val(name);
+    clone.find('.name-field').val(name);
     clone.appendTo('#params');
     clone.show();
   });
@@ -172,7 +172,7 @@ $(function(){
     clone.show();
   });
 
-  $('.remove-param').click(function(event) {
+  $(document).on('click', '.remove-param', function(event) {
     $(event.target).parents(".param").remove()
   });
 });
