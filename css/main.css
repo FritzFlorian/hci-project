@@ -1,13 +1,48 @@
 html, body {
   height: 100%;
   width: 100%;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 #experiment-browser {
   width: 100%;
   overflow: hidden;
+}
+
+.navbar-default {
+  background-color: #41403B;
+}
+
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-brand {
+  color: rgba(255,255,255,0.85);
+  padding: 2px 15px;
+}
+
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover {
+  color: white;
+}
+
+.navbar {
+  min-height: 0;
+}
+
+.navbar-brand {
+  height: auto;
+  font-size: 14px;
+}
+
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+  color: rgba(255,255,255,0.85);
+}
+
+.dropdown-menu>li>a:focus,
+.dropdown-menu>li>a:hover {
+  color: white;
+  background-color: #E5733D;
 }
 
 .my-box {
@@ -23,10 +58,10 @@ html, body {
 
 .my-box .my-row.my-content {
   position: absolute;
-  top: 50px;
-  bottom: 0px;
-
+  top: 24px;
+  bottom: 0;
   background-color: white;
+  padding: 5px
 }
 
 .my-box .my-row.my-content > * {
@@ -45,11 +80,15 @@ html, body {
   overflow-x: hidden;
 }
 
-.gutter {
-  background-color: #eee;
+.my-box .my-row.my-content > #left,
+.my-box .my-row.my-content > #right,
+.my-box .my-row.my-content > #center {
+  border: 1px solid rgba(0,0,0,0.3);
+  background-color: #F2F1EF;
+}
 
-  background-repeat: no-repeat;
-  background-position: 50%;
+.gutter {
+  background: no-repeat 50%;
 }
 
 .gutter.gutter-horizontal {
@@ -70,8 +109,8 @@ html, body {
 .program-operations .panel,
 .program-operations .panel-heading,
 .program-operations .panel-default>.panel-heading {
-  background-color: transparent;
-  border: none;
+  color: rgba(0,0,0,0.85);
+  background-color: #F2F1EF;
 }
 
 .program-operations .panel {
@@ -118,7 +157,7 @@ html, body {
 .project {
   text-decoration: none;
   list-style: none;
-  margin 0;
+  margin: 0;
   padding: 10px 10px;
   border-width: 1px 0;
   border-style: solid;
@@ -147,4 +186,35 @@ html, body {
 .picker-right h1 {
   text-align: center;
   margin: 20px 0 50px 0;
+}
+
+/* ELEMENTS */
+
+.glyphicon {
+  padding-right: .5rem;
+}
+
+.btn-success {
+  color: rgba(0,0,0,0.85);
+  background-color: #FAAB82;
+  border-color: #9e5d3f;
+}
+
+.btn-success:hover,
+.btn-success:focus
+.btn-success.active,
+.open>.dropdown-toggle.btn-success {
+  color: white;
+  background-color: #f07743;
+  border-color: #46291c;
+}
+
+.panel-default>.panel-heading {
+  color: rgba(255,255,255,0.85);
+  background-color: #41403B;
+}
+
+.lobipanel>.panel-heading {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }

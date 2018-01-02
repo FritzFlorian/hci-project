@@ -8,11 +8,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="vendor/jstree/themes/default/style.min.css">
         <link rel="stylesheet" href="vendor/lobipanel/css/lobipanel.min.css">
+        <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
 
@@ -240,7 +240,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button id="add-operation-button" type="button" class="btn btn-success">Add Operation</button>
+                                <button id="add-operation-button" type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Add Operation</button>
                                 <button type="button" class="run-button btn btn-success">Run</button>
 
                                 <!-- To be inserted when clicking add -->
@@ -268,7 +268,10 @@
                         </div>
                     </div>
 
-                    <button id="add-tool" type="button" class="btn btn-success" data-toggle="modal" data-target="#toolBoxModal">Add Tool</button>
+                    <button id="add-tool" type="button" class="btn btn-success" data-toggle="modal" data-target="#toolBoxModal">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        Add Tool
+                    </button>
                 </div>
                 <div id="right">
                     <ul class="nav nav-tabs">
@@ -403,7 +406,7 @@
                 </div>
                 <div class="modal-footer">
                     <button id="add-button" type="button" class="btn btn-success" data-dismiss="modal">Add</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancle</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                 </div>
             </div>
           </div>
