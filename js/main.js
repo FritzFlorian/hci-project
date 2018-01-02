@@ -288,9 +288,21 @@ function clone() {
   $('#experiment-browser').jstree().edit($('#experiment-browser').jstree().get_selected());
 }
 
+function edit() {
+  $('#experiment-browser').jstree().edit($('#experiment-browser').jstree().get_selected());
+}
+
 function delete_node() {
   $('#experiment-browser').jstree().delete_node($('#experiment-browser').jstree().get_selected());
 }
+
+$(function(){ 
+  $('#copy').click(copy);
+  $('#paste').click(paste);
+  $('#clone').click(clone);
+  $('#delete').click(delete_node);
+  $('#rename').click(edit);
+});
 
 //Parm Panel
 $(function(){  
