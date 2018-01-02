@@ -201,9 +201,19 @@ html, body {
 }
 
 .btn-success:hover,
-.btn-success:focus
+.btn-success:focus,
 .btn-success.active,
-.open>.dropdown-toggle.btn-success {
+.btn-success:active,
+.open>.dropdown-toggle.btn-success,
+.btn-success.active.focus,
+.btn-success.active:focus,
+.btn-success.active:hover,
+.btn-success:active.focus,
+.btn-success:active:focus,
+.btn-success:active:hover,
+.open>.dropdown-toggle.btn-success.focus,
+.open>.dropdown-toggle.btn-success:focus,
+.open>.dropdown-toggle.btn-success:hover{
   color: white;
   background-color: #f07743;
   border-color: #46291c;
