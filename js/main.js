@@ -4,6 +4,15 @@ Split(['#left', '#center', '#right'], {
   sizes: [25, 50, 25]
 });
 
+// Call this to trigger a 'fake simulation' loading overlay
+function showLoadingOverlay() {
+  $('#right').LoadingOverlay("show");
+
+  setTimeout(function(){
+      $('#right').LoadingOverlay("hide");
+  }, 200);
+}
+
 // Helper that will add menu items to a panel
 function addMenuItems(panelDiv) {
   panelDiv.lobiPanel({
@@ -284,18 +293,35 @@ $(function(){
   var empty = $('#empty-param');
   empty.removeAttr('id');
 
-  //Init
-  ['Kat-Konz.', 'na1', 'na2', 'na4', 'Temp1', 'Temp2'].forEach(function(name) {
+  function addClone(name) {
     var clone = empty.clone();
     clone.find('.name-field').val(name);
+    
+    var slider = clone.find('[name="points"]');
+    var field = clone.find('[name="points-value"]');
+    field.change(function() {
+      showLoadingOverlay();
+      slider.val($(this).val());
+    });
+    slider.change(function() {
+      showLoadingOverlay();
+      field.val($(this).val());
+    });
+    var init = getRandomInt(0, 7);
+    slider.val(init);
+    field.val(init);
+
     clone.appendTo('#params');
     clone.show();
+  }
+
+  //Init
+  ['Kat-Konz.', 'na1', 'na2', 'na4', 'Temp1', 'Temp2'].forEach(function(name) {
+    addClone(name);
   });
 
   $('#add-param').click(function() {
-    var clone = empty.clone();
-    clone.appendTo('#params');
-    clone.show();
+    addClone('');
   });
 
   $(document).on('click', '.remove-param', function(event) {
@@ -330,3 +356,9 @@ require(['vs/editor/editor.main'], function() {
         language: 'ini'
     });
 });
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+}
