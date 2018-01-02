@@ -1,7 +1,7 @@
 // Split Panerls
 // See: https://nathancahill.github.io/Split.js/
 Split(['#left', '#center', '#right'], {
-  sizes: [25, 50, 25]
+  sizes: [15, 50, 35]
 });
 
 // Helper that will add menu items to a panel
