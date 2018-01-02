@@ -13,6 +13,10 @@ function showLoadingOverlay() {
   }, 200);
 }
 
+$(function() {
+  $('*').change(showLoadingOverlay);
+});
+
 // Helper that will add menu items to a panel
 var startState = 'collapsed';
 function addMenuItems(panelDiv) {
