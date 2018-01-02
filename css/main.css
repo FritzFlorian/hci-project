@@ -237,5 +237,6 @@ html, body {
 
 .jstree-clicked,
 .jstree-default .jstree-clicked {
-  color: white;
+  color: black;
+;
 }
