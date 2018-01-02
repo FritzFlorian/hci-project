@@ -136,57 +136,6 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <div class="panel-title">
-                                    <h4>Measurement Points</h4>
-                                </div>
-                            </div>
-                            <div class="panel-body">
-                                <form>
-                                  <div class="form-group row">
-                                    <label for="inputStart" class="col-md-7 col-form-label">Start-Point</label>
-                                    <div class="col-md-3">
-                                      <input type="text" class="form-control" id="inputStart" value="0.00">
-                                    </div>
-                                  </div>
-                                  <div class="form-group row">
-                                    <label for="inputStart" class="col-md-7 col-form-label">End-Point</label>
-                                    <div class="col-md-3">
-                                      <input type="text" class="form-control" id="inputStart" value="20.00">
-                                    </div>
-                                  </div>
-                                  <div class="form-group row">
-                                    <label for="inputCount" class="col-md-7 col-form-label">Count of Measurement Point</label>
-                                    <div class="col-md-3">
-                                      <input type="text" class="form-control" id="inputCount" value="10">
-                                    </div>
-                                  </div>
-                                  <div class="form-group row">
-                                    <label for="inputFunc" class="col-md-7 col-form-label">Measurementfunction</label>
-                                    <div class="col-md-3">
-                                      <select id="inputFunc" class="form-control">
-                                        <option selected>mfcn1</option>
-                                        <option>mfcn2</option>
-                                        <option>mfcn3</option>
-                                      </select>
-                                    </div>
-                                  </div>
-                                  <div class="form-group row">
-                                    <label for="inputFuncMin" class="col-md-7 col-form-label">MeasurementFuncMin</label>
-                                    <div class="col-md-3">
-                                      <input type="text" class="form-control" id="inputFuncMin" value="0">
-                                    </div>
-                                  </div>
-                                  <div class="form-group row">
-                                    <label for="inputFuncMax" class="col-md-7 col-form-label">MeasurementFuncMax</label>
-                                    <div class="col-md-3">
-                                      <input type="text" class="form-control" id="inputFuncMax" value="1">
-                                    </div>
-                                  </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="panel-title">
                                     <h4>Program Operations</h4>
                                 </div>
                             </div>
@@ -253,14 +202,55 @@
 
                     <!-- To be inserted when clicking add -->
                     <div id="hidden-panel" class="panel panel-default" hidden>
-                        <div class="panel-heading">
-                            <div class="panel-title">
-                                <h4>Panel title</h4>
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    <h4>Measurement Points</h4>
+                                </div>
                             </div>
-                        </div>
-                        <div class="panel-body">
-                            Lorem ipsum...
-                        </div>
+                            <div class="panel-body">
+                                <form>
+                                  <div class="form-group row">
+                                    <label for="inputStart" class="col-md-7 col-form-label">Start-Point</label>
+                                    <div class="col-md-3">
+                                      <input type="text" class="form-control" id="inputStart" value="0.00">
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="inputStart" class="col-md-7 col-form-label">End-Point</label>
+                                    <div class="col-md-3">
+                                      <input type="text" class="form-control" id="inputStart" value="20.00">
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="inputCount" class="col-md-7 col-form-label">Count of Measurement Point</label>
+                                    <div class="col-md-3">
+                                      <input type="text" class="form-control" id="inputCount" value="10">
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="inputFunc" class="col-md-7 col-form-label">Measurementfunction</label>
+                                    <div class="col-md-3">
+                                      <select id="inputFunc" class="form-control">
+                                        <option selected>mfcn1</option>
+                                        <option>mfcn2</option>
+                                        <option>mfcn3</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="inputFuncMin" class="col-md-7 col-form-label">MeasurementFuncMin</label>
+                                    <div class="col-md-3">
+                                      <input type="text" class="form-control" id="inputFuncMin" value="0">
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="inputFuncMax" class="col-md-7 col-form-label">MeasurementFuncMax</label>
+                                    <div class="col-md-3">
+                                      <input type="text" class="form-control" id="inputFuncMax" value="1">
+                                    </div>
+                                  </div>
+                                </form>
+                            </div> 
                     </div>
 
                     <button id="add-tool" type="button" class="btn btn-success" data-toggle="modal" data-target="#toolBoxModal">
