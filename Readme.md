@@ -13,3 +13,4 @@ Used Libraries:
 - JQueryUI (https://jquery.com/)
 - nestedSortable (https://github.com/ilikenwf/nestedSortable)- JQuery (https://jquery.com/)
 - Monaco Editor (https://microsoft.github.io/monaco-editor/)
+- JQuery LoadingOverlay (https://gasparesganga.com/labs/jquery-loading-overlay/)
