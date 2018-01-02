@@ -14,13 +14,15 @@ function showLoadingOverlay() {
 }
 
 // Helper that will add menu items to a panel
+var startState = 'collapsed';
 function addMenuItems(panelDiv) {
   panelDiv.lobiPanel({
     sortable: true,
     reload: false,
     unpin: false,
     expand: false,
-    editTitle: false
+    editTitle: false,
+    state: startState,
   });
 
   // Add pencil to 'edit' the source code.
@@ -42,6 +44,8 @@ $(function(){
   $('#panel-parent').children().each(function() {
     addMenuItems($(this));
   });
+  // All later added are expanded
+  startState = 'pinned';
 
   // Insert new nodes
   var hidden = $('#hidden-panel');
