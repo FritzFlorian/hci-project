@@ -228,3 +228,14 @@ html, body {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
 }
+
+.jstree-default .jstree-wholerow-clicked {
+  background: #d27f54;
+  background: -webkit-linear-gradient(top,#faab82 0,#d27f54 100%);
+  background: linear-gradient(to bottom,#faab82 0,#d27f54 100%);
+}
+
+.jstree-clicked,
+.jstree-default .jstree-clicked {
+  color: white;
+}
