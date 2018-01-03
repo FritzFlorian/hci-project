@@ -80,9 +80,9 @@ html, body {
   overflow-x: hidden;
 }
 
-.my-box .my-row.my-content > #left,
-.my-box .my-row.my-content > #right,
-.my-box .my-row.my-content > #center {
+.my-box .my-row.my-content > #content-left,
+.my-box .my-row.my-content > #content-right,
+.my-box .my-row.my-content > #content-center {
   border: 1px solid rgba(0,0,0,0.3);
   background-color: #F2F1EF;
 }
@@ -104,6 +104,41 @@ html, body {
 .split.split-horizontal, .gutter.gutter-horizontal {
   height: 100%;
   float: left;
+}
+
+.my-box .my-row.my-content > section {
+  position: relative;
+}
+
+.my-row.my-content > section > header {
+  position: relative;
+  z-index: 1010;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: -5px -5px 10px -5px;
+}
+
+.my-row.my-content > section > header h1 {
+  background-color: white;
+  padding: 5px 10px;
+  border-bottom:1px solid rgba(0,0,0,0.3);
+  position: absolute;
+  margin: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  font-size: 22px;
+}
+
+.my-row.my-content > section > .section-content {
+  margin-top: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 5px;
+  overflow-y: scroll;
 }
 
 .program-operations .panel,

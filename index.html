@@ -25,8 +25,8 @@
                     </div>
                     <ul class="nav navbar-nav">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" >Project</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProject" role="button" data-toggle="dropdown" >Project</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownProject">
                               <li><a class="dropdown-item" href="modelbrowser.html">New</a></li>
                               <li><a class="dropdown-item" href="modelbrowser.html">Open</a></li>
                               <li><a class="dropdown-item" href="#">Import</a></li>
@@ -35,8 +35,8 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Edit</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEdit" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Edit</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownEdit">
                               <li><a class="dropdown-item" href="#">Undo</a></li>
                               <li><a class="dropdown-item" href="#">Redo</a></li>
                               <li role="separator" class="divider"></li>
@@ -50,15 +50,15 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">View</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownView" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">View</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownView">
                               <li><a class="dropdown-item" href="#">Allways in Front</a></li>
                               <li><a class="dropdown-item" href="#">Full Screen</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Window</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownWindow" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Window</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownWindow">
                               <li><a class="dropdown-item" href="#">Save Layout</a></li>
                               <li><a class="dropdown-item" href="#">Manage Layouts</a></li>
                               <li role="separator" class="divider"></li>
@@ -79,122 +79,131 @@
                 </div>
             </nav>
             <div class="my-row my-content">
-                <div id="left">
-                    <h1>Experiments</h1>
-                    <div id="experiment-browser"></div>
-                </div>
-                <div id="center">
-                    <div id="panel-parent" class="content">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="panel-title">
-                                    <h4>Parameters</h4>
-                                </div>
-                            </div>
-                            <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-md-1 col-md-offset-2">Min</div>
-                                        <div class="col-md-5">Value</div>
-                                        <div class="col-md-1">Max</div>
-                                        <div class="col-md-1">Step</div>
-                                    </div>
-                                <form id="params">
-                                    <div id="empty-param" class="row form-group param" hidden>
-                                        <div class="col-md-2"><input class="form-control name-field" type="text" size="1" value=""></div>
-                                        <div class="col-md-1"><input class="form-control" type="text" size="1" value=0></div>
-                                        <div class="col-md-4"><input class="form-control" type="range" name="points" min="0" max="10" step="1"></div>
-                                        <div class="col-md-1"><input class="form-control" type="text" name="points-value" value="5" size="1"></div>
-                                        <div class="col-md-1"><input class="form-control" type="text" value="10" size="1"></div>
-                                        <div class="col-md-1"><input class="form-control" type="text" value="1" size="1"></div>
-                                        <div class="col-md-1"><input class="btn btn-danger remove-param" type="button" value="Remove"></div>
-                                    </div>
-                                </form>
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <button type="button" id="add-param" class="btn btn-success btn-block"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Parameter</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="panel-title">
-                                    <h4>Raw File Snapshot</h4>
-                                </div>
-                            </div>
-                            <div class="panel-body" style="height: 300px;">
-                                <div id="container" style="height: 90%; width: 98%"></div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="panel-title">
-                                    <h4>Program Operations</h4>
-                                </div>
-                            </div>
-                            <div class="panel-body">
-                                <div id="list-parent" class="program-operations">
-
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <div class="panel-title">
-                                                Integration
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <div class="panel-title">
-                                                Simulation
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <div class="panel-title">
-                                                Parameter Estimation
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <div class="panel-title">
-                                                Objective Test
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <div class="panel-title">
-                                                Simulation
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <div class="panel-title">
-                                                Derivative Test
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button id="add-operation-button" type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Add Operation</button>
-
-                                <!-- To be inserted when clicking add -->
-                                <div id="hidden-item" class="panel panel-default" hidden>
-                                    <div class="panel-heading">
-                                        <div class="panel-title">
-                                            New Operation
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
+                <section id="content-left">
+                    <header>
+                        <h1>Experimente</h1>
+                    </header>
+                    <div class="section-content">
+                        <div id="experiment-browser"></div>
                     </div>
 
-                    <!-- To be inserted when clicking add -->
-                    <div id="hidden-panel" class="panel panel-default" hidden>
+                </section>
+                <section id="content-center">
+                    <header>
+                        <h1>Werkzeuge</h1>
+                    </header>
+                    <div class="section-content">
+                        <div id="panel-parent" class="content">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="panel-title">
+                                        <h4>Parameters</h4>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-1 col-md-offset-2">Min</div>
+                                            <div class="col-md-5">Value</div>
+                                            <div class="col-md-1">Max</div>
+                                            <div class="col-md-1">Step</div>
+                                        </div>
+                                    <form id="params">
+                                        <div id="empty-param" class="row form-group param" hidden>
+                                            <div class="col-md-2"><input class="form-control name-field" type="text" size="1" value=""></div>
+                                            <div class="col-md-1"><input class="form-control" type="text" size="1" value=0></div>
+                                            <div class="col-md-4"><input class="form-control" type="range" name="points" min="0" max="10" step="1"></div>
+                                            <div class="col-md-1"><input class="form-control" type="text" name="points-value" value="5" size="1"></div>
+                                            <div class="col-md-1"><input class="form-control" type="text" value="10" size="1"></div>
+                                            <div class="col-md-1"><input class="form-control" type="text" value="1" size="1"></div>
+                                            <div class="col-md-1"><input class="btn btn-danger remove-param" type="button" value="Remove"></div>
+                                        </div>
+                                    </form>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <button type="button" id="add-param" class="btn btn-success btn-block"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Parameter</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="panel-title">
+                                        <h4>Raw File Snapshot</h4>
+                                    </div>
+                                </div>
+                                <div class="panel-body" style="height: 300px;">
+                                    <div id="container" style="height: 90%; width: 98%"></div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="panel-title">
+                                        <h4>Program Operations</h4>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div id="list-parent" class="program-operations">
+
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <div class="panel-title">
+                                                    Integration
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <div class="panel-title">
+                                                    Simulation
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <div class="panel-title">
+                                                    Parameter Estimation
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <div class="panel-title">
+                                                    Objective Test
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <div class="panel-title">
+                                                    Simulation
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <div class="panel-title">
+                                                    Derivative Test
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button id="add-operation-button" type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Add Operation</button>
+
+                                    <!-- To be inserted when clicking add -->
+                                    <div id="hidden-item" class="panel panel-default" hidden>
+                                        <div class="panel-heading">
+                                            <div class="panel-title">
+                                                New Operation
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- To be inserted when clicking add -->
+                        <div id="hidden-panel" class="panel panel-default" hidden>
                             <div class="panel-heading">
                                 <div class="panel-title">
                                     <h4>Measurement Points</h4>
@@ -209,9 +218,9 @@
                                     </div>
                                   </div>
                                   <div class="form-group row">
-                                    <label for="inputStart" class="col-md-7 col-form-label">End-Point</label>
+                                    <label for="inputEnd" class="col-md-7 col-form-label">End-Point</label>
                                     <div class="col-md-3">
-                                      <input type="text" class="form-control" id="inputStart" value="20.00">
+                                      <input type="text" class="form-control" id="inputEnd" value="20.00">
                                     </div>
                                   </div>
                                   <div class="form-group row">
@@ -246,18 +255,24 @@
                             </div> 
                     </div>
 
-                    <button id="add-tool" type="button" class="btn btn-success" data-toggle="modal" data-target="#toolBoxModal">
+                        <button id="add-tool" type="button" class="btn btn-success" data-toggle="modal" data-target="#toolBoxModal">
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                         Add Tool
                     </button>
-                </div>
-                <div id="right">
-                    <ul class="nav nav-tabs">
-                      <li class="active"><a data-toggle="tab" href="#graph">Graph</a></li>
-                      <li><a data-toggle="tab" href="#values">Values</a></li>
-                    </ul>
+                    </div>
+                </section>
+                <section id="content-right">
+                    <header>
+                        <h1>Ausgaben</h1>
+                    </header>
 
-                    <div class="tab-content">
+                    <div class="section-content">
+                        <ul class="nav nav-tabs">
+                          <li class="active"><a data-toggle="tab" href="#graph">Graph</a></li>
+                          <li><a data-toggle="tab" href="#values">Values</a></li>
+                        </ul>
+
+                        <div class="tab-content">
                         <div id="graph" class="tab-pane fade in active">
                             <div id="graph-parent">
 
@@ -305,7 +320,8 @@
                             <img src="img/charts/rawvalues.png" class="img-fluid" alt="Responsive image">
                         </div>
                     </div>
-                </div>
+                    </div>
+                </section>
             </div>
         </div>
 
@@ -403,7 +419,7 @@
           </div>
         </div>
         <div id="editSourcecodeModal" class="modal fade" role="dialog">
-          <div class="modal-dialog  modal-lg"">
+          <div class="modal-dialog  modal-lg">
 
             <!-- Modal content-->
             <div class="modal-content">
@@ -417,8 +433,8 @@
                     The original toolbox wont be changed and is still avaliable to be added.
                 </p>
                 <div class="form-group">
-                  <label for="comment">Edit Code:</label>
-                  <textarea class="form-control" rows="20">
+                  <label for="code">Edit Code:</label>
+                  <textarea id="code" class="form-control" rows="20">
 from pyjamas.ui.Composite import Composite
 from pyjamas.ui.CheckBox import CheckBox
 from pyjamas.ui.HorizontalPanel import HorizontalPanel
