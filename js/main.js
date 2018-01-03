@@ -126,36 +126,36 @@ $('#experiment-browser').jstree({
     'multiple' : true,
     'data' : [
       {
-        "text" : "All Experiments",
+        "text" : "Alle Experimente",
         "state" : { "opened" : true },
         "children" : [
           {
-            "text" : "Interesting Findings",
+            "text" : "Interessante Ergebnisse",
             "state" : { "opened" : true },
             "children" : [
               {
-                "text" : "Try more heat",
+                "text" : "Versuch mit mehr Hitze",
                 "state" : { "selected" : true },
                 "icon" : "jstree-file"
               },
               {
-                "text" : "Less heat, more salt",
+                "text" : "Weniger Hitze, mehr Salz",
                 "icon" : "jstree-file"
               },
             ]
           }, {
-            "text" : "Old Experiments",
+            "text" : "Alte Versuche",
             "state" : { "opened" : false },
             "children" : [
               {
-                "text" : "Try more heat",
+                "text" : "Versuch mit Mehr Hitze",
                 "icon" : "jstree-file"
               },
               {
-                "text" : "Less heat, more salt",
+                "text" : "Weniger Hitze",
                 "icon" : "jstree-file"
               }, {
-                "text" : "Other Stuff",
+                "text" : "Andere",
                 "state" : { "opened" : false },
                 "children" : [
                   {
@@ -181,7 +181,7 @@ $('#experiment-browser').jstree({
           "separator_before"  : false,
           "separator_after" : false,
           "_disabled"     : false, //(this.check("rename_node", data.reference, this.get_parent(data.reference), "")),
-          "label"       : "Rename",
+          "label"       : "Umbenennen",
           /*!
           "shortcut"      : 113,
           "shortcut_label"  : 'F2',
@@ -198,7 +198,7 @@ $('#experiment-browser').jstree({
           "icon"        : false,
           "separator_after" : false,
           "_disabled"     : false, //(this.check("delete_node", data.reference, this.get_parent(data.reference), "")),
-          "label"       : "Delete",
+          "label"       : "Löschen",
           "action"      : function (data) {
             var inst = $.jstree.reference(data.reference),
               obj = inst.get_node(data.reference);
@@ -214,7 +214,7 @@ $('#experiment-browser').jstree({
           "separator_before"  : false,
           "icon"        : false,
           "separator_after" : false,
-          "label"       : "Clone",
+          "label"       : "Duplizieren",
           "action"      : function (data) {
             clone();
           }
@@ -223,13 +223,13 @@ $('#experiment-browser').jstree({
           "separator_before"  : true,
           "icon"        : false,
           "separator_after" : false,
-          "label"       : "Edit",
+          "label"       : "Bearbeiten",
           "action"      : false,
           "submenu" : {
             "cut" : {
               "separator_before"  : false,
               "separator_after" : false,
-              "label"       : "Cut",
+              "label"       : "Außschneiden",
               "action"      : function (data) {
                 var inst = $.jstree.reference(data.reference),
                   obj = inst.get_node(data.reference);
@@ -245,7 +245,7 @@ $('#experiment-browser').jstree({
               "separator_before"  : false,
               "icon"        : false,
               "separator_after" : false,
-              "label"       : "Copy",
+              "label"       : "Kopieren",
               "action"      : function (data) {
                 copy();
               }
@@ -257,7 +257,7 @@ $('#experiment-browser').jstree({
                 return !$.jstree.reference(data.reference).can_paste();
               },
               "separator_after" : false,
-              "label"       : "Paste",
+              "label"       : "Einfügen",
               "action"      : function (data) {
                 paste();
               }
