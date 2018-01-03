@@ -18,8 +18,11 @@ $(function() {
 });
 
 // Helper that will add menu items to a panel
-var startState = 'collapsed';
 function addMenuItems(panelDiv) {
+  addMenuItems(panelDiv, 'pinned');
+}
+
+function addMenuItems(panelDiv, startState) {
   panelDiv.lobiPanel({
     sortable: true,
     reload: false,
@@ -45,11 +48,13 @@ function addMenuItems(panelDiv) {
 // Drag & Drop panels
 // See: https://lobianijs.com/site/lobipanel
 $(function(){
-  $('#panel-parent').children().each(function() {
-    addMenuItems($(this));
+  $('#panel-parent').children().each(function(index) {
+    if (index == 0) {
+      addMenuItems($(this), 'pinned');
+    } else {
+      addMenuItems($(this), 'collapsed');
+    }
   });
-  // All later added are expanded
-  startState = 'pinned';
 
   // Insert new nodes
   var hidden = $('#hidden-panel');
