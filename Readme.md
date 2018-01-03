@@ -11,6 +11,7 @@ Used Libraries:
 - Bootstrap 3 (https://getbootstrap.com/)
 - JQuery (https://jquery.com/)
 - JQueryUI (https://jquery.com/)
-- nestedSortable (https://github.com/ilikenwf/nestedSortable)- JQuery (https://jquery.com/)
+- nestedSortable (https://github.com/ilikenwf/nestedSortable)
+- JQuery (https://jquery.com/)
 - Monaco Editor (https://microsoft.github.io/monaco-editor/)
 - JQuery LoadingOverlay (https://gasparesganga.com/labs/jquery-loading-overlay/)
