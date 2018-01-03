@@ -6,10 +6,10 @@ Split(['#content-left', '#content-center', '#content-right'], {
 
 // Call this to trigger a 'fake simulation' loading overlay
 function showLoadingOverlay() {
-  $('#right').LoadingOverlay("show");
+  $('#content-right').LoadingOverlay("show");
 
   setTimeout(function(){
-      $('#right').LoadingOverlay("hide");
+      $('#content-right').LoadingOverlay("hide");
   }, 200);
 }
 
