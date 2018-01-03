@@ -1552,7 +1552,7 @@ $(function(){
         minimize: {
             icon: 'glyphicon glyphicon-minus', //icon is shown when panel is not minimized
             icon2: 'glyphicon glyphicon-plus', //icon2 is shown when panel is minimized
-            tooltip: 'Minimize'         //tooltip text, If you want to disable tooltip, set it to false
+            tooltip: 'Ein-/Ausklappen'         //tooltip text, If you want to disable tooltip, set it to false
         },
         expand: {
             icon: 'glyphicon glyphicon-resize-full', //icon is shown when panel is not on full screen
@@ -1561,7 +1561,7 @@ $(function(){
         },
         close: {
             icon: 'glyphicon glyphicon-remove', //You can user glyphicons if you do not want to use font-awesome
-            tooltip: 'Close'            //tooltip text, If you want to disable tooltip, set it to false
+            tooltip: 'Schließen'            //tooltip text, If you want to disable tooltip, set it to false
         },
         editTitle: {
             icon: 'glyphicon glyphicon-pencil',
