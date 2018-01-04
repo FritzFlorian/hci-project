@@ -183,6 +183,23 @@ html, body {
   overflow-y: scroll;
 }
 
+.lobipanel > .panel-heading .dropdown .dropdown-menu-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+}
+
+.lobipanel > .panel-heading .dropdown .dropdown-menu-right > li {
+  display: flex;
+  align-items: stretch;
+}
+
+.lobipanel > .panel-heading .dropdown .dropdown-menu-right > li > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .run-panel {
   display: flex;
   justify-content: flex-end;
@@ -239,6 +256,10 @@ html, body {
 
 .modelbrowser .actions {
   float: right;
+}
+
+.model-table tr {
+  cursor: pointer;
 }
 
 .vertical-align {
@@ -331,6 +352,13 @@ html, body {
 .panel-default>.panel-heading {
   color: rgba(255,255,255,0.85);
   background-color: #41403B;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .lobipanel>.panel-heading {
@@ -347,5 +375,13 @@ html, body {
 .jstree-clicked,
 .jstree-default .jstree-clicked {
   color: black;
-;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
