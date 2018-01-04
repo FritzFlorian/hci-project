@@ -1,7 +1,8 @@
 // Split Panerls
 // See: https://nathancahill.github.io/Split.js/
 Split(['#content-left', '#content-center', '#content-right'], {
-  sizes: [25, 50, 25]
+  sizes: [25, 50, 25],
+  minSize: 400
 });
 
 // Call this to trigger a 'fake simulation' loading overlay
