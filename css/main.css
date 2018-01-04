@@ -141,6 +141,22 @@ html, body {
   overflow-y: scroll;
 }
 
+.run-panel {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.run-panel > * {
+  margin-left: 10px;
+  align-self: center;
+}
+
+.run-panel .checkbox {
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .program-operations .panel,
 .program-operations .panel-heading,
 .program-operations .panel-default>.panel-heading {
