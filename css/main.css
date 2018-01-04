@@ -200,17 +200,23 @@ html, body {
   align-items: center;
 }
 
-.run-panel {
+.nav-tabs {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 
-.run-panel > * {
-  margin-left: 10px;
-  align-self: center;
+.run-panel {
+  margin-left: auto;
+  padding-right: 5px;
 }
 
 .run-panel .checkbox {
+  margin: 0;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: normal;
+  padding-left: 20px;
   overflow-x: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -311,6 +317,19 @@ html, body {
 }
 
 /* ELEMENTS */
+
+a {
+  color: #d38055;
+}
+
+a:focus,
+a:hover {
+  color: #754432;
+}
+
+.nav>li>a {
+  padding: 7px 10px;
+}
 
 .glyphicon {
   padding-right: .5rem;

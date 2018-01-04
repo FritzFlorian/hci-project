@@ -120,7 +120,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <div class="panel-title">
-                                        <h4 data-toggle="tooltip" data-placement="right" title="Erlaubt das setzen der Parameter für das Experiment">Parameter</h4>
+                                        <h4 data-toggle="tooltip" data-placement="right" title="Parameter für das Experiment konfigurieren">Parameter</h4>
                                     </div>
                                 </div>
                                 <div class="panel-body">
@@ -154,7 +154,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <div class="panel-title">
-                                        <h4 data-toggle="tooltip"  data-placement="right" title="Erlaubt es Einstellungen zu treffen, für die keine Toolbox existiert">vplan.ini</h4>
+                                        <h4 data-toggle="tooltip"  data-placement="right" title="Einstellungen ändern, für die kein Werkzeug existiert">vplan.ini</h4>
                                     </div>
                                 </div>
                                 <div class="panel-body" style="height: 300px;">
@@ -257,7 +257,7 @@
                             <li>
                                 <a class="nav-link dropdown-toggle" href="#" id="valuesDropdown" role="button" data-toggle="dropdown" ><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span></a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownEdit">
-                                    <li><a class="dropdown-item" href="#" id="paste"><input type="checkbox" id="autorun"><label style="font-weight:normal !important;" for="autorun">&nbsp Automatisch Ausführen</label></input></a></li>
+                                    <li><a class="dropdown-item" href="#" id="paste"></a></li>
                                     <li><a class="dropdown-item" href="#" id="paste"><input type="file" id="files" class="hidden"/><label style="font-weight:normal !important;" for="files">Dateien im Explorer Öffnen</label></a></li>
                                     <li class="dropdown-submenu">
                                         <a class="nav-link dropdown-toggle" href="#" id="valuesDropdown" role="button" data-toggle="dropdown" >Exportiere als</a>
@@ -270,11 +270,14 @@
                                 </ul>
                             </li>
                             <div class="run-panel">
-                                
-                                <a href="#" class="btn btn-default btn-success" role="button">
+                                <a href="#" id="run-button" class="btn btn-default btn-block btn-success" role="button">
                                     <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
                                     Ausführen
                                 </a>
+                                <label class="checkbox">
+                                    <input id="autorun-checkbox" type="checkbox" checked>
+                                    Automatisch Ausführen
+                                </label>
                             </div>
                         </ul>
 

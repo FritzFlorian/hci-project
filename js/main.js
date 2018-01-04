@@ -30,7 +30,7 @@ function addMenuItems(panelDiv, startState) {
     unpin: false,
     expand: false,
     editTitle: false,
-    state: startState,
+    state: startState
   });
 
   // Add pencil to 'edit' the source code.
@@ -142,14 +142,14 @@ $('#experiment-browser').jstree({
                   {
                     "text" : "Less heat, more salt",
                     "icon" : "jstree-file"
-                  },
+                  }
                 ]
               }
             ]
           }
         ]
-      },
-    ],
+      }
+    ]
   },
   'contextmenu': {
     'items' : function (o, cb) { // Could be an object directly
@@ -249,7 +249,7 @@ $('#experiment-browser').jstree({
           "action"      : function (data) {
             open();
           }
-        },
+        }
       };
 
 
@@ -301,7 +301,7 @@ $(function(){
   $('#rename').click(edit);
 });
 
-//Parm Panel
+//Param Panel
 $(function(){  
   var empty = $('#empty-param');
   empty.removeAttr('id');
@@ -381,7 +381,29 @@ $(function(){
 
 //Run Panel
 $(function(){
-  $('.run-panel a').click(function() {
+
+  var autorunCheckbox = $('#autorun-checkbox');
+  var runButton = $('#run-button');
+  autorunCheckbox.click(function () {
+    if (autorunCheckbox.is(':checked')) {
+        showLoadingOverlay();
+      runButton.toggleClass('disabled', true);
+    } else {
+      runButton.toggleClass('disabled', false);
+    }
+  });
+
+  function initRunButton() {
+    if (autorunCheckbox.is(':checked')) {
+      runButton.toggleClass('disabled', true);
+    } else {
+      runButton.toggleClass('disabled', false);
+    }
+  }
+
+  initRunButton();
+
+  runButton.click(function() {
     showLoadingOverlay();
   });
 });
