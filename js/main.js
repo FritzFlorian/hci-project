@@ -84,7 +84,8 @@ $(function(){
     reload: false,
     unpin: false,
     expand: false,
-    editTitle: false
+    editTitle: false,
+    close: false,
   });
 });
 
