@@ -64,6 +64,7 @@ $(function(){
     var clone = hidden.clone();
     clone.appendTo('#panel-parent');
     clone.show();
+    $('[data-toggle="tooltip"]').tooltip()
 
     // Update the UI-Sortable collection
     $('#panel-parent').sortable("refresh");
@@ -121,6 +122,11 @@ $(function(){
     });
   });
 });
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+  $('#add-tool').tooltip();
+})
 
 // Experiment Browser
 // See: https://www.jstree.com/api/
