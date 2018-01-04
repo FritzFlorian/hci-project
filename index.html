@@ -102,18 +102,21 @@
                                         </div>
                                     <form id="params">
                                         <div id="empty-param" class="row form-group param" hidden>
-                                            <div class="col-md-2"><input class="form-control name-field" type="text" size="1" value=""></div>
-                                            <div class="col-md-1"><input class="form-control" type="text" size="1" value=0></div>
-                                            <div class="col-md-4"><input class="form-control" type="range" name="points" min="0" max="10" step="1"></div>
-                                            <div class="col-md-1"><input class="form-control" type="text" name="points-value" value="5" size="1"></div>
-                                            <div class="col-md-1"><input class="form-control" type="text" value="10" size="1"></div>
-                                            <div class="col-md-1"><input class="form-control" type="text" value="1" size="1"></div>
-                                            <div class="col-md-1"><input class="btn btn-danger remove-param" type="button" value="entfernen"></div>
+                                            <div class="param-data col-md-2"><input class="form-control name-field" type="text" size="1" value=""></div>
+                                            <div class="param-data col-md-1"><input class="form-control" type="number" size="1" value=0></div>
+                                            <div class="param-data col-md-4"><input class="form-control" type="range" name="points" min="0" max="10" step="1"></div>
+                                            <div class="param-data col-md-1"><input class="form-control" type="number" name="points-value" value="5" size="1"></div>
+                                            <div class="param-data col-md-1"><input class="form-control" type="number" value="10" size="1"></div>
+                                            <div class="param-data col-md-1"><input class="form-control" type="number" value="1" size="1"></div>
+                                            <div class="param-data col-md-2"><input class="btn btn-danger remove-param" type="button" value="entfernen"></div>
                                         </div>
                                     </form>
                                     <div class="row">
-                                        <div class="col-md-3">
-                                            <button type="button" id="add-param" class="btn btn-success btn-block"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Parameter hinzufügen</button>
+                                        <div class="col-md-12">
+                                            <button type="button" id="add-param" class="btn btn-success">
+                                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                Parameter hinzufügen
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -136,55 +139,13 @@
                                     </div>
                                 </div>
                                 <div class="panel-body">
-                                    <div id="list-parent" class="program-operations">
-
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <div class="panel-title">
-                                                    Integration
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <div class="panel-title">
-                                                    Simulation
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <div class="panel-title">
-                                                    Parameterschätzung
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <div class="panel-title">
-                                                    Objective Test
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <div class="panel-title">
-                                                    Simulation
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <div class="panel-title">
-                                                    Derivative Test
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div id="operation-list-parent" class="program-operations">
+                                        <!-- Program Operations -->
                                     </div>
                                     <button id="add-operation-button" type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Aktion Hinzufügen</button>
 
-                                    <!-- To be inserted when clicking add -->
-                                    <div id="hidden-item" class="panel panel-default" hidden>
+                                    <!-- Program Operation Template -->
+                                    <div id="empty-operation" class="panel panel-default" hidden>
                                         <div class="panel-heading">
                                             <div class="panel-title">
                                                 New Operation
@@ -266,7 +227,7 @@
                             <li><a data-toggle="tab" href="#values">Values</a></li>
                             <div class="run-panel">
                                 <div class="checkbox">
-                                    <label><input type="checkbox">Auto Update</label>
+                                    <label><input type="checkbox">Automatisch ausführen</label>
                                 </div>
                                 <a href="#" class="btn btn-default btn-success" role="button">
                                     <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
@@ -365,8 +326,8 @@
                         <div id="left" class="col-md-4">
                             <table class="model-table table table-hover table-striped">
                                 <thead>
-                                    <th>Model</th>
-                                    <th>Author</th>
+                                    <th>Modell</th>
+                                    <th>Autor</th>
                                     <th>Downloads</th>
                                 </thead>
                                 <tbody>

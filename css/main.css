@@ -157,6 +157,14 @@ html, body {
   text-overflow: ellipsis;
 }
 
+.param-data {
+  padding: 0 5px;
+}
+
+.param-data .form-control {
+  padding: 0 0 0 6px;
+}
+
 .program-operations .panel,
 .program-operations .panel-heading,
 .program-operations .panel-default>.panel-heading {
