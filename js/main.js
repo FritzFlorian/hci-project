@@ -206,7 +206,7 @@ $('#experiment-browser').jstree({
             "cut" : {
               "separator_before"  : false,
               "separator_after" : false,
-              "label"       : "Außschneiden",
+              "label"       : "Ausschneiden",
               "action"      : function (data) {
                 var inst = $.jstree.reference(data.reference),
                   obj = inst.get_node(data.reference);
