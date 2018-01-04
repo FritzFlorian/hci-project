@@ -66,7 +66,7 @@
                         <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ausgaben</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="#" id="paste"><input type="checkbox" id="autorun"><label style="font-weight:normal !important;" for="autorun">&nbsp Automatisch Ausführen</label></input></a></li>
+                                        <li><a class="dropdown-item" href="#" id="paste"><input type="checkbox" id="autorun" class="no-change autorun-enabled" checked><label style="font-weight:normal !important;" for="autorun">&nbsp Automatisch Ausführen</label></input></a></li>
                                         <li><a class="dropdown-item" href="#" id="paste"><input type="file" id="files" class="hidden"/><label style="font-weight:normal !important;" for="files">Dateien im Explorer Öffnen</label></a></li>
                                         <li class="dropdown-submenu">
                                             <a class="nav-link dropdown-toggle" href="#" id="valuesDropdown" role="button" data-toggle="dropdown" >Exportiere als</a>
@@ -255,12 +255,12 @@
                                 </ul>
                             </li>
                             <div class="run-panel">
-                                <a href="#" id="run-button" class="btn btn-default btn-block btn-success" role="button">
+                                <a href="#" id="run-button" class="btn btn-default btn-block btn-success disabled" role="button">
                                     <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
                                     Ausführen
                                 </a>
-                                <label class="checkbox no-update">
-                                    <input id="autorun-checkbox" class="no-update" type="checkbox" checked>
+                                <label class="checkbox">
+                                    <input id="autorun-checkbox" class="no-change autorun-enabled" type="checkbox" checked>
                                     Automatisch Ausführen
                                 </label>
                             </div>

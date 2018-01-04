@@ -6,19 +6,31 @@ Split(['#content-left', '#content-center', '#content-right'], {
 });
 
 // Call this to trigger a 'fake simulation' loading overlay
-function showLoadingOverlay() {
-  $('#content-right').LoadingOverlay("show");
+function forceShowLoadingOverlay() {
+  showLoadingOverlay(true);
+}
 
-  setTimeout(function(){
-      $('#content-right').LoadingOverlay("hide");
-  }, 200);
+function showLoadingOverlay() {
+  var shouldShow = $('.autorun-enabled').is(':checked');
+  showLoadingOverlay(shouldShow);
+}
+
+function showLoadingOverlay(shouldShow) {
+  if (shouldShow) {
+    $('#content-right').LoadingOverlay("show");
+
+    setTimeout(function(){
+        $('#content-right').LoadingOverlay("hide");
+    }, 200);
+  }
 }
 
 $(function() {
-    $("*:not('.no-update')").change(showLoadingOverlay);
+  $('[type=input]').not('.no-change').change(showLoadingOverlay);
 });
 
-// Loading overlay for measurement graph (DOES NOT WORK YET)
+// Loading overlay for measurement graph.
+// Muss neu aufgerufen werden nachdem das panel gecloned wurde.
 function showMeasurementGraphLoadingOverlay() {
     $('#measurement-graph').LoadingOverlay("show");
 
@@ -27,8 +39,11 @@ function showMeasurementGraphLoadingOverlay() {
     }, 200);
 }
 
-$(function () {
-    $(".measurement-points *").change(showMeasurementGraphLoadingOverlay);
+function setupMeasurementPoints() {
+    $(".measurement-points").children().change(showMeasurementGraphLoadingOverlay);
+}
+$(function() {
+  setupMeasurementPoints();
 });
 
 // Helper that will add menu items to a panel
@@ -84,7 +99,8 @@ $(function(){
     $('#panel-parent').sortable("refresh");
     $('#panel-parent').sortable("refreshPositions");
 
-      addMenuItems(clone);
+    addMenuItems(clone);
+    setupMeasurementPoints();
   });
 });
 
@@ -393,31 +409,28 @@ $(function(){
 });
 
 //Run Panel
-$(function(){
-
-  var autorunCheckbox = $('#autorun-checkbox');
+$(function() {
+  var autorunCheckboxes = $('.autorun-enabled');
   var runButton = $('#run-button');
-  autorunCheckbox.click(function () {
-    if (autorunCheckbox.is(':checked')) {
-        showLoadingOverlay();
+  autorunCheckboxes.click(function (event) {
+    if ($(this).is(':checked')) {
+      forceShowLoadingOverlay();
       runButton.toggleClass('disabled', true);
     } else {
       runButton.toggleClass('disabled', false);
     }
   });
 
-  function initRunButton() {
-    if (autorunCheckbox.is(':checked')) {
-      runButton.toggleClass('disabled', true);
-    } else {
-      runButton.toggleClass('disabled', false);
-    }
-  }
-
-  initRunButton();
+  // Sync all boxes
+  autorunCheckboxes.change(function() {
+    var enabled = $(this).is(':checked');
+    autorunCheckboxes.each(function() {
+      $(this).prop('checked', enabled);
+    });
+  });
 
   runButton.click(function() {
-    showLoadingOverlay();
+    forceShowLoadingOverlay();
   });
 });
 
