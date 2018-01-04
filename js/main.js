@@ -239,7 +239,16 @@ $('#experiment-browser').jstree({
               }
             }
           }
-        }
+        },
+        "explorer" : {
+          "separator_before"  : true,
+          "icon"        : false,
+          "separator_after" : false,
+          "label"       : "Im Explorer Öffnen",
+          "action"      : function (data) {
+            open();
+          }
+        },
       };
 
 
@@ -260,6 +269,13 @@ function paste() {
   }
 
   $('#experiment-browser').jstree().paste(pasteTarget);
+}
+function open() {
+  var element = document.createElement('div');
+  element.innerHTML = '<input type="file">';
+  var fileInput = element.firstChild;
+
+  fileInput.click();
 }
 
 function clone() {
