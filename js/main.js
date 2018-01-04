@@ -88,42 +88,6 @@ $(function(){
   });
 });
 
-// Drag & Drop Program Operations
-// See: https://lobianijs.com/site/lobipanel
-$(function(){
-  var list_parent = $('#list-parent');
-  list_parent.children().lobiPanel({
-    sortable: true,
-    reload: false,
-    unpin: false,
-    expand: false,
-    editTitle: false,
-    minimize: false
-  });
-
-  // Insert new nodes
-  var hidden = $('#hidden-item');
-  hidden.removeAttr('id');
-
-  $('#add-operation-button').click(function() {
-    var clone = hidden.clone();
-    clone.appendTo('#list-parent');
-    clone.show();
-
-    list_parent.sortable("refresh");
-    list_parent.sortable("refreshPositions");
-
-    clone.lobiPanel({
-      sortable: true,
-      reload: false,
-      unpin: false,
-      expand: false,
-      editTitle: false,
-      minimize: false
-    });
-  });
-});
-
 $(function () {
   $('[data-toggle="tooltip"]').tooltip();
   $('#add-tool').tooltip();
@@ -358,6 +322,43 @@ $(function(){
 
   $(document).on('click', '.remove-param', function(event) {
     $(event.target).parents(".param").remove()
+  });
+});
+
+// Fill Program Operations Panel
+$(function(){
+  var list_parent = $('#operation-list-parent');
+  // Find template for operation
+  var empty = $('#empty-operation');
+  empty.removeAttr('id');
+
+  function addOperation(title) {
+    // Set title
+    var clone = empty.clone();
+    clone.find('.panel-title').text(title);
+
+    // Place and display clone
+    clone.appendTo(list_parent);
+    clone.show();
+
+    // Define lobiPanel functions
+    clone.lobiPanel({
+      sortable: true,
+      reload: false,
+      unpin: false,
+      expand: false,
+      editTitle: false,
+      minimize: false
+    });
+  }
+
+  // Initialize Program Operations
+  ['Integration', 'Simulation', 'Parameterabschätzung', 'Objective Test', 'Simulation', 'Derivative Test'].forEach(function(name) {
+    addOperation(name);
+  });
+
+  $('#add-operation-button').click(function() {
+    addOperation('New Operation');
   });
 });
 
