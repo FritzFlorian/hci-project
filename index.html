@@ -232,11 +232,24 @@
                     <div class="section-content">
                         <ul class="nav nav-tabs">
                             <li class="active"><a data-toggle="tab" href="#graph">Graph</a></li>
-                            <li><a data-toggle="tab" href="#values">Values</a></li>
+                            <li><a data-toggle="tab" href="#values">Werte</a></li>
+                            <li>
+                                <a class="nav-link dropdown-toggle" href="#" id="valuesDropdown" role="button" data-toggle="dropdown" ><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span></a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownEdit">
+                                    <li><a class="dropdown-item" href="#" id="paste"><input type="checkbox">&nbsp Automatisch ausführen</input></a></li>
+                                    <li><a class="dropdown-item" href="#" id="paste">Dateien Im Explorer Öffnen</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a class="nav-link dropdown-toggle" href="#" id="valuesDropdown" role="button" data-toggle="dropdown" >Exportiere als</a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a class="dropdown-item" href="exportfiles/Daten.xlsx" download>Excel</a></li>
+                                            <li><a class="dropdown-item" href="exportfiles/Daten.csv" download>CSV</a></li>
+                                            <li><a class="dropdown-item" href="exportfiles/Daten.txt" download>TXT</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
                             <div class="run-panel">
-                                <div class="checkbox">
-                                    <label><input type="checkbox">Automatisch ausführen</label>
-                                </div>
+                                
                                 <a href="#" class="btn btn-default btn-success" role="button">
                                     <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
                                     Ausführen
