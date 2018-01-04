@@ -295,10 +295,16 @@ html, body {
   padding-right: .5rem;
 }
 
+.btn {
+  outline: none !important;
+}
+
 .btn-success {
-  color: rgba(0,0,0,0.85);
-  background-color: #FAAB82;
+  color: rgba(0,0,0,0.75);
   border-color: #9e5d3f;
+  background: #d27f54;
+  background: -webkit-linear-gradient(top,#faab82 0,#d27f54 100%);
+  background: linear-gradient(to bottom,#faab82 0,#d27f54 100%);
 }
 
 .btn-success:hover,
@@ -315,9 +321,11 @@ html, body {
 .open>.dropdown-toggle.btn-success.focus,
 .open>.dropdown-toggle.btn-success:focus,
 .open>.dropdown-toggle.btn-success:hover{
-  color: white;
-  background-color: #f07743;
+  color: black;
   border-color: #46291c;
+  background: #e18c56;
+  background: -webkit-linear-gradient(top, #ffb087 0, #e18c56 100%);
+  background: linear-gradient(to bottom, #ffb087 0, #e18c56 100%);
 }
 
 .panel-default>.panel-heading {
