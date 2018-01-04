@@ -186,55 +186,40 @@
                             </div>
                         </div>
 
-                        <!-- Panel template -->
+                        <!-- Hidden Measurement Panel -->
                         <div id="hidden-panel" class="panel panel-default" hidden>
                             <div class="panel-heading">
                                 <div class="panel-title">
-                                    <h4  data-toggle="tooltip"  data-placement="right" title="Festlegen, wie die Messpunkte definiert werden (Diskretisierung)">Messpunkte</h4>
+                                    <h4 data-toggle="tooltip" data-placement="right" title="Festlegen, wie die Messpunkte definiert werden (Diskretisierung)">Messpunkte</h4>
                                 </div>
                             </div>
                             <div class="panel-body">
-                                <form>
-                                  <div class="form-group row">
-                                    <label for="inputStart" class="col-md-7 col-form-label">Start-Point</label>
-                                    <div class="col-md-3">
-                                      <input type="text" class="form-control" id="inputStart" value="0.00">
+                                <form class="measurement-points">
+                                    <div class="form-group col-md-3">
+                                        <label for="measurement-function">Messfunktion</label>
+                                        <select id="measurement-function" class="form-control">
+                                            <option selected>mfcn1</option>
+                                            <option>mfcn2</option>
+                                            <option>mfcn3</option>
+                                        </select>
                                     </div>
-                                  </div>
-                                  <div class="form-group row">
-                                    <label for="inputEnd" class="col-md-7 col-form-label">End-Point</label>
-                                    <div class="col-md-3">
-                                      <input type="text" class="form-control" id="inputEnd" value="20.00">
+                                    <div class="col-sm-12" id="measurement-graph">
+                                        <img src="img/panels/measurement-graph.jpg" class="img-responsive" alt="Measurement Panel Visualization" width="75%" />
                                     </div>
-                                  </div>
-                                  <div class="form-group row">
-                                    <label for="inputCount" class="col-md-7 col-form-label">Count of Measurement Point</label>
-                                    <div class="col-md-3">
-                                      <input type="text" class="form-control" id="inputCount" value="10">
+                                    <div class="measurement-values">
+                                        <div class="form-group col-md-3 center-text">
+                                            <label for="start-point">Startpunkt</label>
+                                            <input type="number" id="start-point" class="form-control" min="0" value="0" step="0.05">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="step-count">Schritte</label>
+                                            <input type="number" id="step-count" class="form-control" min="2" value="20">
+                                        </div>
+                                        <div class="form-group col-md-3 center-text">
+                                            <label for="end-point">Endpunkt</label>
+                                            <input type="number" id="end-point" class="form-control" min="0" value="30" step="0.05">
+                                        </div>
                                     </div>
-                                  </div>
-                                  <div class="form-group row">
-                                    <label for="inputFunc" class="col-md-7 col-form-label">Measurementfunction</label>
-                                    <div class="col-md-3">
-                                      <select id="inputFunc" class="form-control">
-                                        <option selected>mfcn1</option>
-                                        <option>mfcn2</option>
-                                        <option>mfcn3</option>
-                                      </select>
-                                    </div>
-                                  </div>
-                                  <div class="form-group row">
-                                    <label for="inputFuncMin" class="col-md-7 col-form-label">MeasurementFuncMin</label>
-                                    <div class="col-md-3">
-                                      <input type="text" class="form-control" id="inputFuncMin" value="0">
-                                    </div>
-                                  </div>
-                                  <div class="form-group row">
-                                    <label for="inputFuncMax" class="col-md-7 col-form-label">MeasurementFuncMax</label>
-                                    <div class="col-md-3">
-                                      <input type="text" class="form-control" id="inputFuncMax" value="1">
-                                    </div>
-                                  </div>
                                 </form>
                             </div> 
                     </div>
@@ -274,8 +259,8 @@
                                     <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
                                     Ausführen
                                 </a>
-                                <label class="checkbox">
-                                    <input id="autorun-checkbox" type="checkbox" checked>
+                                <label class="checkbox no-update">
+                                    <input id="autorun-checkbox" class="no-update" type="checkbox" checked>
                                     Automatisch Ausführen
                                 </label>
                             </div>

@@ -15,7 +15,20 @@ function showLoadingOverlay() {
 }
 
 $(function() {
-  $('*').change(showLoadingOverlay);
+    $("*:not('.no-update')").change(showLoadingOverlay);
+});
+
+// Loading overlay for measurement graph (DOES NOT WORK YET)
+function showMeasurementGraphLoadingOverlay() {
+    $('#measurement-graph').LoadingOverlay("show");
+
+    setTimeout(function(){
+        $('#measurement-graph').LoadingOverlay("hide");
+    }, 200);
+}
+
+$(function () {
+    $(".measurement-points *").change(showMeasurementGraphLoadingOverlay);
 });
 
 // Helper that will add menu items to a panel
