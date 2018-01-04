@@ -361,6 +361,13 @@ $(function(){
   });
 });
 
+//Run Panel
+$(function(){
+  $('.run-panel a').click(function() {
+    showLoadingOverlay();
+  });
+});
+
 require(['vs/editor/editor.main'], function() {
     var editor = monaco.editor.create(document.getElementById('container'), {
         value: [
