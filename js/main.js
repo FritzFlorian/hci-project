@@ -7,15 +7,16 @@ Split(['#content-left', '#content-center', '#content-right'], {
 
 // Call this to trigger a 'fake simulation' loading overlay
 function forceShowLoadingOverlay() {
-  showLoadingOverlay(true);
+  _showLoadingOverlay(true);
 }
 
 function showLoadingOverlay() {
+  console.log($('.autorun-enabled').is(':checked'));
   var shouldShow = $('.autorun-enabled').is(':checked');
-  showLoadingOverlay(shouldShow);
+  _showLoadingOverlay(shouldShow);
 }
 
-function showLoadingOverlay(shouldShow) {
+function _showLoadingOverlay(shouldShow) {
   if (shouldShow) {
     $('#content-right').LoadingOverlay("show");
 
@@ -26,7 +27,7 @@ function showLoadingOverlay(shouldShow) {
 }
 
 $(function() {
-  $('[type=input]').not('.no-change').change(showLoadingOverlay);
+  $('input').not('.no-change').change(showLoadingOverlay);
 });
 
 // Loading overlay for measurement graph.
